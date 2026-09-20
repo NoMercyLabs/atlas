@@ -23,7 +23,7 @@ import os
 import re
 import sys
 
-TIERS = {"introduce", "quickstart", "examples", "reference", "catalogue"}
+TIERS = {"introduce", "quickstart", "examples", "reference", "catalog"}
 STATUSES = {"planned", "drafted", "reviewed"}
 COLUMNS = ["page", "tier", "job", "owns", "assumes", "links to", "covers", "status"]
 
@@ -111,7 +111,7 @@ def parse_map(path: str) -> tuple[list[Row], list[str]]:
             continue
 
         if in_excluded and stripped.startswith("-"):
-            entry = stripped.lstrip("- ").split("—")[0].split(" - ")[0]
+            entry = stripped.lstrip("- ").split("—")[0].split(" - ")[0].split(": ")[0]
             excluded.append(entry.strip().strip("`"))
             continue
 

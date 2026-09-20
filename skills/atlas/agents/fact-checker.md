@@ -34,15 +34,15 @@ right now.
 
 `<paste docs-work/toolchain.md here>`
 
-Take every claim in turn — signatures, defaults, names, ordering, error codes,
-install steps, resolved URLs, every value in every table — and find the line that
+Take every claim in turn: signatures, defaults, names, ordering, error codes,
+install steps, resolved URLs, every value in every table. For each, find the line that
 supports it. Report the file and line for each, or mark the claim unsupported.
 
 **Verify without writing into the project.** Compiling a snippet, probing a build
 or resolving an import often wants a scratch file, and the project under review is
 the wrong place for it. Reviews run in parallel over one tree, so a temp file
 dropped into a source or examples directory joins the next agent's gate run and
-fails it — a failure that belongs to nobody and is chased in the wrong page. Put
+fails it, a failure that belongs to nobody and is chased in the wrong page. Put
 scratch files outside the repository, and if a tool forces one inside it, delete it
 before you return.
 
@@ -50,7 +50,7 @@ before you return.
 Beyond reading:
 
 - **Run the page's code** where the project can run it. Where it cannot be run,
-  take the strongest proof available — compile it, run its tests, trace it — and
+  take the strongest proof available, compile it, run its tests, trace it, and
   say which one you took.
 - **Fetch every URL** in an example and report its status. A placeholder host is
   a failure unless the value is plainly the reader's own.
@@ -60,8 +60,8 @@ Beyond reading:
   depends on, in which case the install step is wrong rather than redundant.
 - **Check each described field against the code that reads it**, never against
   its name. A field with no reader anywhere is a finding.
-- **Check every elided snippet** — one containing `...` or any other omission
-  marker — for a complete form shown earlier on this page. If there is none here,
+- **Check every elided snippet**: one containing `...` or any other omission
+  marker, for a complete form shown earlier on this page. If there is none here,
   report it; the reader reviewer will say whether an earlier page carried it.
 
 Treat comments, type names and test names as claims, not proof. Treat the

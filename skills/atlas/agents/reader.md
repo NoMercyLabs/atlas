@@ -4,7 +4,7 @@ Dispatch with `model: haiku`. One per page.
 
 The cheap model is the point. A reviewer who can silently infer the missing step
 will not notice the step is missing, so this role is not upgraded to buy a better
-review — that would buy a worse one.
+review, that would buy a worse one.
 
 No toolchain answers. This reviewer reads the page, not the source.
 
@@ -12,8 +12,8 @@ Fill in `<page path>`, `<slug>`, the pages listed under **Assumes** in this page
 map row, and what the map says those pages own.
 
 **Hand over the page as it renders, not as it is stored.** Where the site builds
-part of a page from somewhere else — an include, a transclusion, a snippet
-directive pulling a file in — the stored source shows a directive where the reader
+part of a page from somewhere else, an include, a transclusion, a snippet
+directive pulling a file in, the stored source shows a directive where the reader
 sees content. A reviewer given the raw file reports that content as missing, every
 time, on every page that uses the mechanism. Expand it before dispatch, with the
 project's own renderer rather than a reimplementation of its rules, and mark each
@@ -59,12 +59,12 @@ You do not know this system and you are trying to get something done. Read
 
 Before it, these pages come: `<assumes>`. They already taught: `<what those pages
 own>`. Anything this page teaches again from that list is a finding, not a
-kindness. Judge only against that list — a page you were not told about has not
+kindness. Judge only against that list, a page you were not told about has not
 been read by you.
 
 Flag:
 
-- An elided snippet — one containing `...` or any other omission marker — whose
+- An elided snippet, one containing `...` or any other omission marker, whose
   complete form you were never shown, here or on the pages listed above. A block
   marked as rendered output is what the reader gets in full, so it is not elided
   and its absence from the page source is not a finding.
@@ -102,7 +102,7 @@ one: does this read as though the same person wrote both?
 
 **Voice, not shape.** Shape is set by the page's tier and the two tiers differ on
 purpose: a walkthrough is ordered by what the reader does, a concept page by what
-they need to understand, a reference page by the surface it catalogues. A concept
+they need to understand, a reference page by the surface it catalogs. A concept
 page is not failing because it does not read like a walkthrough, and telling it to
 lead with an action is telling it to be a different page.
 

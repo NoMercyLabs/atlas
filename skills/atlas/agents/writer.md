@@ -14,7 +14,7 @@ Write one page. Do not touch any other file.
 
     Page:      <the route, from the map's Page column>
     File:      <the content file to create or replace>
-    Tier:      <introduce | quickstart | examples | reference | catalogue>
+    Tier:      <introduce | quickstart | examples | reference | catalog>
     Job:       <the one sentence from the map>
     Owns:      <concepts explained here and nowhere else>
     Assumes:   <pages the reader has already read>
@@ -63,7 +63,7 @@ registered yet.
 
 Match the reference page at the sentence level, not the page shape. Shape belongs
 to the tier: a walkthrough is ordered by what the reader does, a concept page by
-what they need to understand, a reference page by the surface it catalogues.
+what they need to understand, a reference page by the surface it catalogs.
 
 Five checks, none of which need judgment:
 

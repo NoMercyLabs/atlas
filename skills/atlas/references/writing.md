@@ -12,7 +12,7 @@ Where the project ships a formatter, run it over the extracted snippets rather t
 
 **A formatter is indifferent about more than it looks, and indifference is not permission.** Most will preserve whichever form the author wrote for a small literal, so running one over a cramped snippet returns the cramped snippet, formatted. Wherever the tool accepts both forms, the choice is still yours and the rule below decides it.
 
-A construct that carries a body — an argument list, a literal collection, a set of named fields — breaks across lines at one member as readily as at five. Not when it grows too long: at one member, always. The shape is what the reader recognizes, and a shape that changes with size is one they have to measure before they can trust it. A construct that is a pattern being matched rather than a body being built stays inline, and that is its own shape held to just as firmly. Which constructs fall on which side is a question about the language, not about this rule: in one it is a destructured parameter, in another an initializer, in another a keyword argument list. Take the answer from the surrounding source, and hold it without exception.
+A construct that carries a body, an argument list, a literal collection, a set of named fields, breaks across lines at one member as readily as at five. Not when it grows too long: at one member, always. The shape is what the reader recognizes, and a shape that changes with size is one they have to measure before they can trust it. A construct that is a pattern being matched rather than a body being built stays inline, and that is its own shape held to just as firmly. Which constructs fall on which side is a question about the language, not about this rule: in one it is a destructured parameter, in another an initializer, in another a keyword argument list. Take the answer from the surrounding source, and hold it without exception.
 
 **Write for a reader who scans, not one who reads.** This is the rule with the widest reach on the page, and it is the first one to go when a sentence gets interesting to write. A dense page is not a page with too much in it: it is a page that cannot be entered, and a reader who cannot enter it does not read it more slowly, they leave.
 
@@ -39,7 +39,7 @@ The front door. Someone should be able to tell within thirty seconds whether thi
 One or two sentences: what it does and who it is for.
 
 ## What it does
-A short paragraph of real substance — the problem being solved, not marketing.
+A short paragraph of real substance, the problem being solved, not marketing.
 
 ## Requirements
 Concrete versions, verified against manifests and CI.
@@ -61,15 +61,15 @@ Keep the deep material out of the README and link to it. A README that tries to 
 
 ### The docs/ directory
 
-Include what the project actually warrants — an empty section is worse than a missing one:
+Include what the project actually warrants, an empty section is worse than a missing one:
 
-- **`architecture.md`** — the system as a whole. Components, responsibilities, how they communicate, and at least one complete end-to-end trace from Phase 2. Include a diagram in Mermaid where it earns its place; a picture of five boxes and their arrows beats three paragraphs describing the same thing.
-- **`getting-started.md`** — full local setup for someone who has never seen the project: prerequisites, install, configuration, running, and how to tell it worked. Include the failure modes you hit while verifying.
-- **`configuration.md`** — every setting: name, purpose, type, default, required or optional, and what happens with a wrong value.
-- **`api.md`** — for anything others integrate with. Endpoints or public exports with parameters, return shapes, errors, and a realistic example per operation. Generated where a spec exists; hand-written where it doesn't.
-- **`development.md`** — how to work on it: branching, tests, linting, build, conventions the code actually follows, and how to add a typical new feature.
-- **`deployment.md`** — where it runs, how it gets there, what it needs, and how to tell whether it is healthy.
-- **`data-model.md`** — entities, relationships, lifecycles, migrations, where state lives.
+- **`architecture.md`**: the system as a whole. Components, responsibilities, how they communicate, and at least one complete end-to-end trace from Phase 2. Include a diagram in Mermaid where it earns its place; a picture of five boxes and their arrows beats three paragraphs describing the same thing.
+- **`getting-started.md`**: full local setup for someone who has never seen the project: prerequisites, install, configuration, running, and how to tell it worked. Include the failure modes you hit while verifying.
+- **`configuration.md`**: every setting: name, purpose, type, default, required or optional, and what happens with a wrong value.
+- **`api.md`**: for anything others integrate with. Endpoints or public exports with parameters, return shapes, errors, and a realistic example per operation. Generated where a spec exists; hand-written where it doesn't.
+- **`development.md`**: how to work on it: branching, tests, linting, build, conventions the code actually follows, and how to add a typical new feature.
+- **`deployment.md`**: where it runs, how it gets there, what it needs, and how to tell whether it is healthy.
+- **`data-model.md`**: entities, relationships, lifecycles, migrations, where state lives.
 
 Naming and division should follow the project. A Unity project may need `scenes.md` and `input.md` more than `deployment.md`; a library needs a thorough API reference and barely any deployment section.
 
@@ -77,9 +77,9 @@ Naming and division should follow the project. A Unity project may need `scenes.
 
 A docs site that ships custom directives has already solved presentation. Writing a fenced code block where the project has a live-example component produces a page that works and looks like it came from somewhere else.
 
-Find the directive set before writing. Wherever the site registers its content pipeline — plugins, shortcodes, components, macros, depending on the generator — that registration is the inventory. Read it, then count what existing content actually uses, because a directive that ships and is never used is usually unfinished, and one used on every page is the house style.
+Find the directive set before writing. Wherever the site registers its content pipeline, plugins, shortcodes, components, macros, depending on the generator, that registration is the inventory. Read it, then count what existing content actually uses, because a directive that ships and is never used is usually unfinished, and one used on every page is the house style.
 
-Write the inventory down before drafting, one row per directive, recording for each: what it is for, what it takes, and whether the build checks anything about it. That last column is the one that matters — a directive whose content is compiled, type-checked or executed cannot drift from the code it shows, which makes it worth reaching for even when a plain block would read the same.
+Write the inventory down before drafting, one row per directive, recording for each: what it is for, what it takes, and whether the build checks anything about it. That last column is the one that matters, a directive whose content is compiled, type-checked or executed cannot drift from the code it shows, which makes it worth reaching for even when a plain block would read the same.
 
 Sort the inventory into what the site can do that plain text cannot: run an example, render reference rows from data, mark an aside so it does not read as body text, carry a symptom with its cause and fix, and lay out navigation. A gap in that list is a page shape the project has decided not to support, and writing around it beats inventing a directive that does not exist.
 
@@ -91,37 +91,37 @@ Where the project can render a live example, a page teaching a visible feature u
 
 A reader who lands on a topic should find it whole, not half of it in two places. Three tiers, and every page does exactly one of them:
 
-- **Introduce** — what it is, why it exists, when you reach for it, the mental model. Never enumerates an API.
+- **Introduce**: what it is, why it exists, when you reach for it, the mental model. Never enumerates an API.
 
-Tier one usually wants two pages rather than one, because they do different jobs for different readers. An **introduction** is the page someone arrives on, often from a search, and its job is to let them decide whether this is for them: what the thing is, what shape it has, what it can do, why it was built this way. It is the only page where making the reader interested is a legitimate goal. A **quickstart** assumes they already decided, and gets them to something working with as little friction as possible — and while doing that, it shows how the project thinks, which is the part that makes the rest of the documentation feel predictable. One page cannot do both well: framing slows down the reader who wants to start, and starting immediately never explains why they should.
-- **Detailed examples** — how you actually do it, with code that runs.
-- **Full API spec** — the exhaustive catalogue. The only tier allowed to be complete.
+Tier one usually wants two pages rather than one, because they do different jobs for different readers. An **introduction** is the page someone arrives on, often from a search, and its job is to let them decide whether this is for them: what the thing is, what shape it has, what it can do, why it was built this way. It is the only page where making the reader interested is a legitimate goal. A **quickstart** assumes they already decided, and gets them to something working with as little friction as possible, and while doing that, it shows how the project thinks, which is the part that makes the rest of the documentation feel predictable. One page cannot do both well: framing slows down the reader who wants to start, and starting immediately never explains why they should.
+- **Detailed examples**: how you actually do it, with code that runs.
+- **Full API spec**: the exhaustive catalog. The only tier allowed to be complete.
 
 A topic gets at most one page per tier. Two pages in the same tier on one subject is a merge.
 
-Not every topic wants three pages. A single component, command or endpoint is a **catalogue entry**: one page carrying purpose, usage and reference as sections in that order. Splitting one of those across three pages produces pages nobody wants. The three-page arc is for the things a reader sits down to learn.
+Not every topic wants three pages. A single component, command or endpoint is a **catalog entry**: one page carrying purpose, usage and reference as sections in that order. Splitting one of those across three pages produces pages nobody wants. The three-page arc is for the things a reader sits down to learn.
 
 The failure this prevents is measurable. Where a topic is split, the two pages share almost no wording but name nearly the same symbols, so it does not look like duplication in a diff and reads as a gap to the reader. Symbol overlap between two pages on one subject reaching most of the smaller page is the signal.
 
-**The tier decides how much of a true fact belongs on the page.** A detail can be correct, verified, and still the wrong size for where it sits: a complete list of accepted formats, every option a call takes, every error a call throws. In an introducing or example page, give the shape of the answer with one or two concrete anchors, then link to the tier that carries the rest. The reader of a walkthrough needs to know whether their case is covered and where to look when it is not; they do not need the catalogue mid-step. Answering with an exhaustive list there is the same defect as answering with nothing, because both stop the reader from moving.
+**The tier decides how much of a true fact belongs on the page.** A detail can be correct, verified, and still the wrong size for where it sits: a complete list of accepted formats, every option a call takes, every error a call throws. In an introducing or example page, give the shape of the answer with one or two concrete anchors, then link to the tier that carries the rest. The reader of a walkthrough needs to know whether their case is covered and where to look when it is not; they do not need the catalog mid-step. Answering with an exhaustive list there is the same defect as answering with nothing, because both stop the reader from moving.
 
 Every page a deferral could name is already a row before any writing starts, so at this point the link resolves by construction. Reaching for one that does not exist is not a hole to note and move past: it is the map being wrong, discovered from inside a sentence.
 
-Stop there and settle it on the map, with the user if the answer changes the shape. Either the page becomes a row — planned, and the delivery gate fails until it is written and reviewed — or the deferral was mistaken and the detail belongs inline in the page you are writing. Then go back to the sentence.
+Stop there and settle it on the map, with the user if the answer changes the shape. Either the page becomes a row, planned, and the delivery gate fails until it is written and reviewed, or the deferral was mistaken and the detail belongs inline in the page you are writing. Then go back to the sentence.
 
 Writing on past it is how the set acquires a permanent gap. A note that a page is outstanding lives in a session that ends, while the dangling link ships.
 
 ### Writing a walkthrough
 
-A page that takes someone from nothing to a working result — a quickstart, a setup guide, a tutorial — carries four obligations the other shapes do not.
+A page that takes someone from nothing to a working result, a quickstart, a setup guide, a tutorial, carries four obligations the other shapes do not.
 
 **Reach a working result early, then layer.** The first thing a reader wants is evidence that any of this works on their machine. Order the page so the smallest thing that runs comes as early as the subject allows, and treat everything after it as adding one capability at a time. A page that spends five steps on preparation before anything can be observed asks for trust it has not yet earned, and a reader who hits a problem in step two has no idea whether they broke it in step one.
 
-**Every step says what the reader should now see.** A step whose outcome is unstated cannot be checked, so a reader who has quietly failed carries the failure forward and discovers it somewhere unrelated. State the observable result in the reader's terms — what appears, what changes, what becomes possible — and where a step has a common way of going wrong, name the symptom next to it. That turns a silent failure into a diagnosis without a paragraph of troubleshooting.
+**Every step says what the reader should now see.** A step whose outcome is unstated cannot be checked, so a reader who has quietly failed carries the failure forward and discovers it somewhere unrelated. State the observable result in the reader's terms, what appears, what changes, what becomes possible, and where a step has a common way of going wrong, name the symptom next to it. That turns a silent failure into a diagnosis without a paragraph of troubleshooting.
 
-**The outcome sentence has one shape, and it is marked.** A reader scanning for "did that work" should find the answer without reading the step again, so the sentence naming the result is written the same way every time — second person, present tense, about what is now on their screen, and visually distinct from the prose around it. Once it has a silhouette they can skip everything else and still check themselves at every step. Where the step can fail visibly, the symptoms follow immediately and each names its cause: one sentence per way it goes wrong, in the order the reader would meet them.
+**The outcome sentence has one shape, and it is marked.** A reader scanning for "did that work" should find the answer without reading the step again, so the sentence naming the result is written the same way every time, second person, present tense, about what is now on their screen, and visually distinct from the prose around it. Once it has a silhouette they can skip everything else and still check themselves at every step. Where the step can fail visibly, the symptoms follow immediately and each names its cause: one sentence per way it goes wrong, in the order the reader would meet them.
 
-**Steps are numbered and headed by the action.** A heading that names what the reader does — install it, give it a container, wait for it — lets someone returning to the page find the step they are on without reading. Numbers matter for the same reason a later step can then say which earlier one it modifies, by number, instead of by description.
+**Steps are numbered and headed by the action.** A heading that names what the reader does, install it, give it a container, wait for it, lets someone returning to the page find the step they are on without reading. Numbers matter for the same reason a later step can then say which earlier one it modifies, by number, instead of by description.
 
 **Name the exit ramp.** A walkthrough that adds capability in layers passes several points where a particular reader already has what they came for, and saying so is not an admission that the rest is optional padding. It respects that they came with a smaller problem than the page solves. One clause is enough, at the point it becomes true.
 
@@ -129,17 +129,17 @@ A page that takes someone from nothing to a working result — a quickstart, a s
 
 The measure of a good explanation between steps is that it changes what the reader would do next or what they would expect to see. Anything that fails that test is padding no matter how true it is, and the step it interrupts was better without it.
 
-**Give a reader the model, not just the move.** Every step introduces something the reader now has to reason about, and the step is only finished when they can picture it. A container is not "an element you provide"; it is the thing that becomes the root, carries the state your CSS can hook, and holds the pieces in an order that decides what sits above what. A method is not "how you set the volume"; it is where that value lives and what else observes it. State what the thing becomes, what it holds, what it exposes, and what a reader may bring of their own — because that is the difference between following the page once and being able to work without it.
+**Give a reader the model, not just the move.** Every step introduces something the reader now has to reason about, and the step is only finished when they can picture it. A container is not "an element you provide"; it is the thing that becomes the root, carries the state your CSS can hook, and holds the pieces in an order that decides what sits above what. A method is not "how you set the volume"; it is where that value lives and what else observes it. State what the thing becomes, what it holds, what it exposes, and what a reader may bring of their own, because that is the difference between following the page once and being able to work without it.
 
 The failure this catches is a true, complete, useless sentence. It answers the step and leaves the reader unable to do anything the page did not literally show, and it reads as finished, which is why it survives review. When a line names something the reader will carry through the rest of the page, three or four sentences of model are worth more than any later paragraph of prose.
 
 **Where a system supports two ways, recommend one and price the other.** A step that shows a single path leaves the reader guessing whether the other thing they were about to try is wrong, unsupported, or simply undocumented, and they find out later in a context where it looks like their mistake. Naming both is not a digression; it is the difference between following instructions and understanding the system.
 
-Do it in one move: say which order to prefer and why, then what changes if they do it the other way. Two sentences is usually enough, and the shape is what keeps it from overwhelming — a recommendation first gives the reader a default they can take without deciding anything, and the alternative arrives as information rather than as a question they must answer. Presenting the options as equals is what creates the paralysis, not the existence of the second one.
+Do it in one move: say which order to prefer and why, then what changes if they do it the other way. Two sentences is usually enough, and the shape is what keeps it from overwhelming, a recommendation first gives the reader a default they can take without deciding anything, and the alternative arrives as information rather than as a question they must answer. Presenting the options as equals is what creates the paralysis, not the existence of the second one.
 
 **Explain between the steps, do not stack them.** A sequence of bare instructions is faster to write and worse to learn from, because it never says why any step exists, and a reader who does not know why cannot adapt it to their case. A few sentences between steps, carrying the reason or the consequence, is what turns a list into something someone can follow into their own project. This is not license to pad: the test is whether the sentence would change what the reader does or expects.
 
-**Show an addition as an addition.** Once a page has established a call, a later step that adds to it shows the new lines and says where they go — not the whole call again with the new parts inside. Restating it makes the reader diff two blocks to find what changed, and it contradicts the earlier step by implying the call happens twice.
+**Show an addition as an addition.** Once a page has established a call, a later step that adds to it shows the new lines and says where they go, not the whole call again with the new parts inside. Restating it makes the reader diff two blocks to find what changed, and it contradicts the earlier step by implying the call happens twice.
 
 The danger is worse than redundancy. A restatement is almost never complete, because the instinct is to trim it to what the section is about, and the result is a *different, broken* call: fields the reader had are silently missing, so copying it over their working code removes settings they need and sends them debugging the wrong thing. The shorter the restatement, the more it deletes.
 
@@ -154,9 +154,9 @@ fetch('/api/items', {
 });
 ```
 
-The ellipsis is doing real work — it marks the snippet as a fragment so nobody reads it as complete, and it says the omitted parts stay as they are.
+The ellipsis is doing real work, it marks the snippet as a fragment so nobody reads it as complete, and it says the omitted parts stay as they are.
 
-**It only works if the reader has already seen what it elides.** An ellipsis is a pointer back to a complete form, so with nothing to point at it is not an addition, it is a fragment of a call the reader has never met, and they cannot tell what the omitted parts were, whether they have them, or where the block goes. Two placements make it legitimate: the full form appears earlier on this page, or it appears on a page this one's map row lists under **Assumes**, which is the record of what the reader arrived having read. Nothing else counts — not another page that happens to exist, and not a form shown in a different tier the reader had no reason to open.
+**It only works if the reader has already seen what it elides.** An ellipsis is a pointer back to a complete form, so with nothing to point at it is not an addition, it is a fragment of a call the reader has never met, and they cannot tell what the omitted parts were, whether they have them, or where the block goes. Two placements make it legitimate: the full form appears earlier on this page, or it appears on a page this one's map row lists under **Assumes**, which is the record of what the reader arrived having read. Nothing else counts, not another page that happens to exist, and not a form shown in a different tier the reader had no reason to open.
 
 Where neither holds, the complete form is what goes on the page, once, and every later step elides against it. A first appearance is always whole.
 
@@ -184,7 +184,7 @@ Where the project marks partial snippets, use that marker as well.
 
 **Sections are cohesive or they mislead.** Cohesion is the old module-design scale, and it grades a documentation section exactly as well as it grades a unit of code. A section has *functional* cohesion when everything in it serves one job the reader recognizes, and that is the target. Two weaker kinds are what go wrong in practice.
 
-*Logical* cohesion groups things because they are the same kind of operation — every registration call, every setter, every endpoint that happens to be a POST. The similarity is in the syntax, not in the subject, and a reader takes adjacency as meaning: put an unrelated capability beside two that belong together and they will look for the relationship that is not there.
+*Logical* cohesion groups things because they are the same kind of operation, every registration call, every setter, every endpoint that happens to be a POST. The similarity is in the syntax, not in the subject, and a reader takes adjacency as meaning: put an unrelated capability beside two that belong together and they will look for the relationship that is not there.
 
 *Coincidental* cohesion groups whatever is left over, and it announces itself in the heading: "the rest", "other", "miscellaneous", "additional options". A leftovers heading is not a naming problem, it is the section telling you it has no subject, and the fix is to split it along the concerns already inside it rather than to rename it.
 
@@ -210,7 +210,7 @@ The test is whether you could write the full explanation in two sentences withou
 
 **Document the deviation, not the convention.** Where the library behaves the way the platform does, say nothing. Explaining that a listener is removed by reference teaches a JavaScript developer what they already know, and it trains them to skim the paragraphs that do carry a surprise. Spend the words where the behavior would surprise them.
 
-The same test applies to consequences. Do not warn about an outcome the reader meets the instant it happens: turning on two interfaces shows two interfaces, and the screen says so before any sentence could. A caution earns its place when the result is silent, delayed, or presents as an unrelated problem — the cases a reader cannot connect back to the choice that caused them. Source comments are a common way this leaks in, because a note written for the next developer touching a branch, who cannot see the rendered result, becomes a statement of the obvious once it reaches someone looking at the screen.
+The same test applies to consequences. Do not warn about an outcome the reader meets the instant it happens: turning on two interfaces shows two interfaces, and the screen says so before any sentence could. A caution earns its place when the result is silent, delayed, or presents as an unrelated problem, the cases a reader cannot connect back to the choice that caused them. Source comments are a common way this leaks in, because a note written for the next developer touching a branch, who cannot see the rendered result, becomes a statement of the obvious once it reaches someone looking at the screen.
 
 **Prose under a table adds what the table cannot hold.** When to choose a row, what happens next, why one row differs in kind. Restating a cell in a sentence is padding that reads as thoroughness.
 

@@ -1,14 +1,14 @@
 ---
 name: atlas
 description: >-
-  A documentation authoring voice: read an entire project as one coherent system and produce complete, accurate, usable documentation in a consistent voice. Use this skill whenever the user wants a project, repo, or codebase documented — including "document this project", "write a README for this", "our docs are out of date", "the docs don't match the code anymore", "write onboarding docs", or any request to rewrite, audit, complete, or regenerate existing documentation. Use it even when the user only asks about a single doc file or README, because documenting one part correctly still requires understanding the whole system. Works for any project type — web apps, APIs, Unity/game projects, libraries, CLIs, data pipelines, mixed monorepos. Do not use it for inline docstrings in one file, or for end-user help content unrelated to a codebase.
+  A documentation authoring voice: read an entire project as one coherent system and produce complete, accurate, usable documentation in a consistent voice. Use this skill whenever the user wants a project, repo, or codebase documented, including "document this project", "write a README for this", "our docs are out of date", "the docs don't match the code anymore", "write onboarding docs", or any request to rewrite, audit, complete, or regenerate existing documentation. Use it even when the user only asks about a single doc file or README, because documenting one part correctly still requires understanding the whole system. Works for any project type: web apps, APIs, Unity/game projects, libraries, CLIs, data pipelines, mixed monorepos. Do not use it for inline docstrings in one file, or for end-user help content unrelated to a codebase.
 license: MIT
 compatibility: >-
   Needs Python 3 for scripts/check_docs.py and a harness that can dispatch subagents
   with a model per role. Tested in Claude Code.
 metadata:
   author: NoMercy Labs
-  version: "1.0.1"
+  version: "1.0.2"
   homepage: https://github.com/NoMercyLabs/atlas
 ---
 
@@ -28,7 +28,7 @@ Three commitments hold it together.
 
 A rule in a skill file is a promise, and a broken promise costs nothing. Each phase below therefore ends in a file on disk, and four of them end in a command that can reject the work.
 
-Everything goes in `docs-work/` beside the documentation. Keep it — it is the audit trail for every claim delivered — or offer to remove it at the end.
+Everything goes in `docs-work/` beside the documentation. Keep it as the audit trail for every claim delivered, or offer to remove it at the end.
 
 | Gate | Artifact | Check |
 | --- | --- | --- |
@@ -45,7 +45,7 @@ Run them with the bundled checker, which needs Python 3 and nothing else:
 python3 scripts/check_docs.py all --map docs-work/map.md --src src --docs docs
 ```
 
-Where Python is unavailable, the four map invariants are still countable by hand — that is why the map is a table. Counting by hand is the fallback, not the default, and the count goes in the report either way.
+Where Python is unavailable, the four map invariants are still countable by hand, that is why the map is a table. Counting by hand is the fallback, not the default, and the count goes in the report either way.
 
 **A gate that did not run has not passed.** Reporting a page as done without its two verdict files on disk is the failure this whole structure exists to make impossible.
 
@@ -61,7 +61,7 @@ Where Python is unavailable, the four map invariants are still countable by hand
 
 **A batch that comes back with findings is repaired and re-reviewed inside the same run.** Not deferred to a later session, not listed in the report as outstanding, not left `drafted` while the run moves to fresh rows. A repair is new writing and is reviewed in full, and that cycle repeats until the batch carries two passing verdicts per page. Only then does the next batch start.
 
-**An instruction that offers a second option is not a rule, it is permission.** "Do this, or note that it is outstanding" reads as rigor and is the opposite: the first branch is work and the second is a sentence, so the second always wins under pressure — and the note lives in a session that ends while the gap ships. Anywhere a decision could go two ways, both ways end in the artifact: a row added, a row removed, an entry on the excluded list with its reason. Then a later session inherits the decision instead of inheriting a promise that nobody kept.
+**An instruction that offers a second option is not a rule, it is permission.** "Do this, or note that it is outstanding" reads as rigor and is the opposite: the first branch is work and the second is a sentence, so the second always wins under pressure, and the note lives in a session that ends while the gap ships. Anywhere a decision could go two ways, both ways end in the artifact: a row added, a row removed, an entry on the excluded list with its reason. Then a later session inherits the decision instead of inheriting a promise that nobody kept.
 
 ## Who does the work
 
@@ -103,29 +103,29 @@ needs two `Verdict: PASS` files.
 
 Create one todo per phase and work them in order.
 
-**Phase 0 — Settle the scope.** Enumerate the candidate apps, packages and services, then ask: everything, or a selection, with the full list to tick, plus what is deliberately excluded. Nothing else — audience, depth and structure are read, not asked, and settled at the map. → `references/architecture.md`
+**Phase 0: Settle the scope.** Enumerate the candidate apps, packages and services, then ask: everything, or a selection, with the full list to tick, plus what is deliberately excluded. Nothing else, audience, depth and structure are read, not asked, and settled at the map. → `references/architecture.md`
 
-**Phase 1 — Map the terrain.** Cheap commands: tree, file counts, every manifest and config, existing documentation anywhere in the tree, recent `git log`. Then answer the seven toolchain questions from this repository into `docs-work/toolchain.md`, because every later verification depends on them. → `references/research.md`, `references/toolchain.md`, `references/project-types.md`
+**Phase 1: Map the terrain.** Cheap commands: tree, file counts, every manifest and config, existing documentation anywhere in the tree, recent `git log`. Then answer the seven toolchain questions from this repository into `docs-work/toolchain.md`, because every later verification depends on them. → `references/research.md`, `references/toolchain.md`, `references/project-types.md`
 
-**Phase 2 — Read it as one system.** Entry points, at least two complete end-to-end traces, the data, the seams, the deliberate decisions. Cover 100% of non-test source, not a sample: count the files, cut the tree into slices, and fan the slices out in parallel as `agents/scanner.md`, each carrying `docs-work/toolchain.md`. → `references/research.md`
+**Phase 2: Read it as one system.** Entry points, at least two complete end-to-end traces, the data, the seams, the deliberate decisions. Cover 100% of non-test source, not a sample: count the files, cut the tree into slices, and fan the slices out in parallel as `agents/scanner.md`, each carrying `docs-work/toolchain.md`. → `references/research.md`
 
-**Phase 3 — Verify before you claim.** Scripts, environment variables, commands, versions, endpoints — check each against the code rather than against the old docs. → `references/research.md`
+**Phase 3: Verify before you claim.** Scripts, environment variables, commands, versions, endpoints, check each against the code rather than against the old docs. → `references/research.md`
 
-**Phase 4 — Audit and back up existing documentation.** Read it all, classify every claim as still true, stale or wrong, and copy the originals to `docs-backup-<YYYY-MM-DD-HHMM>/` before writing anything. → `references/architecture.md`
+**Phase 4: Audit and back up existing documentation.** Read it all, classify every claim as still true, stale or wrong, and copy the originals to `docs-backup-<YYYY-MM-DD-HHMM>/` before writing anything. → `references/architecture.md`
 
-**Phase 5 — Choose the shape and draw the map.** Whether a documentation system already exists, and where it should live if not. Then one row per planned page in `docs-work/map.md`, settled with the user before a file is written. → `references/architecture.md`, `assets/map-template.md`
+**Phase 5: Choose the shape and draw the map.** Whether a documentation system already exists, and where it should live if not. Then one row per planned page in `docs-work/map.md`, settled with the user before a file is written. → `references/architecture.md`, `assets/map-template.md`
 
-**Phase 6 — Write.** Dispatch `agents/writer.md` in batches, one per row, each carrying its map row, the toolchain answers, the reference page and the slice reports covering its source. Register each finished page in navigation yourself. → `references/writing.md`, `agents/writer.md`
+**Phase 6: Write.** Dispatch `agents/writer.md` in batches, one per row, each carrying its map row, the toolchain answers, the reference page and the slice reports covering its source. Register each finished page in navigation yourself. → `references/writing.md`, `agents/writer.md`
 
-**Phase 7 — Two reviews on every page.** A fact-check agent and a reader agent, separately, each writing a verdict file. → `agents/fact-checker.md`, `agents/reader.md`, `references/review.md`
+**Phase 7: Two reviews on every page.** A fact-check agent and a reader agent, separately, each writing a verdict file. → `agents/fact-checker.md`, `agents/reader.md`, `references/review.md`
 
-**Phase 8 — Check it holds together, and report.** → `references/review.md`
+**Phase 8: Check it holds together, and report.** → `references/review.md`
 
 ## Operating boundary
 
 Investigation must not change the project. Only three kinds of write are allowed: the backup, the new documentation, and `docs-work/`.
 
-**One deliberate exception: a bug the documentation work reveals gets fixed, not written up.** If a documented option is never read, a binding never fires, or a method silently no-ops, the fix belongs in the code — with a regression test proven to fail without it. Writing "note: this does not currently work" ships a disclaimer where a fix was possible. Do not wander into unrelated refactors.
+**One deliberate exception: a bug the documentation work reveals gets fixed, not written up.** If a documented option is never read, a binding never fires, or a method silently no-ops, the fix belongs in the code, with a regression test proven to fail without it. Writing "note: this does not currently work" ships a disclaimer where a fix was possible. Do not wander into unrelated refactors.
 
 **A run does not edit this skill.** Finding a defect in these instructions is expected and valuable, and changing them mid-run is not. The rules would then differ between the page reviewed at the start and the page reviewed at the end, with nothing on either verdict saying which version judged it. A session deep in one repository also writes rules shaped by that repository, which is how a portable skill stops being portable.
 
@@ -137,15 +137,15 @@ Full detail, including which verification commands are safe to run: `references/
 
 ## Files
 
-- `references/voice.md` — the authoring position, the origin rule, sentence rules
-- `references/research.md` — the operating boundary, Phases 1 to 3
-- `references/architecture.md` — Phases 0, 4 and 5: scope, destination, the map and its invariants
-- `references/writing.md` — Phase 6: README, tiers, walkthroughs, surfaces, examples
-- `references/review.md` — Phases 7 and 8
-- `references/project-types.md` — what to look for per ecosystem
-- `agents/` — the three dispatch roles and the model each runs on
-- `references/toolchain.md` — the seven questions answered from the repository, before any slice is scanned
-- `assets/map-template.md` — the map, in the shape the checker parses
-- `scripts/check_docs.py` — the coverage, map, review and link gates, plus `mermaid` to render the map
+- `references/voice.md`: the authoring position, the origin rule, sentence rules
+- `references/research.md`: the operating boundary, Phases 1 to 3
+- `references/architecture.md`: Phases 0, 4 and 5: scope, destination, the map and its invariants
+- `references/writing.md`: Phase 6: README, tiers, walkthroughs, surfaces, examples
+- `references/review.md`: Phases 7 and 8
+- `references/project-types.md`: what to look for per ecosystem
+- `agents/`: the three dispatch roles and the model each runs on
+- `references/toolchain.md`: the seven questions answered from the repository, before any slice is scanned
+- `assets/map-template.md`: the map, in the shape the checker parses
+- `scripts/check_docs.py`: the coverage, map, review and link gates, plus `mermaid` to render the map
 
-Every example in these files is drawn from constructs that exist everywhere — a request, an element, a worker, a config file. None of them names an API from the project this skill was written in, because a skill that teaches its own examples as vocabulary produces documentation for a library the reader does not have. Evidence from a real pass stays, with the product's names taken out of it. Adding an example means finding a universal one.
+Every example in these files is drawn from constructs that exist everywhere, a request, an element, a worker, a config file. None of them names an API from the project this skill was written in, because a skill that teaches its own examples as vocabulary produces documentation for a library the reader does not have. Evidence from a real pass stays, with the product's names taken out of it. Adding an example means finding a universal one.

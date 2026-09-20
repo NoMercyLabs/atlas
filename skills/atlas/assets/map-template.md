@@ -12,7 +12,7 @@ separated by semicolons. An empty list is `-`.
 
 ## Excluded
 
-- `path/to/thing` — why it is deliberately not documented
+- `path/to/thing`: why it is deliberately not documented
 
 ## Pages
 
@@ -22,7 +22,7 @@ separated by semicolons. An empty list is `-`.
 | /guide/quickstart | quickstart | Get one working result on the reader's machine. | - | /guide/introduction | /reference/config | src/setup.ts | planned |
 | /reference/config | reference | Every setting, its default, and what a wrong value does. | configuration | /guide/quickstart | - | src/config | planned |
 
-**Tier** is one of `introduce`, `quickstart`, `examples`, `reference`, `catalogue`.
+**Tier** is one of `introduce`, `quickstart`, `examples`, `reference`, `catalog`.
 **Status** is one of `planned`, `drafted`, `reviewed`.
 **Job** is one sentence. A job that needs two sentences is two pages.
 **Owns** names the concepts explained here and nowhere else. Most pages own nothing.

@@ -8,7 +8,7 @@
       "displayName": "Atlas",
       "source": { "source": "github", "repo": "NoMercyLabs/atlas" },
       "description": "Maps a whole project and documents it as one system, in one voice, every claim grounded in the code and every page gated by two reviews.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "author": { "name": "NoMercy Labs", "url": "https://github.com/NoMercyLabs" },
       "homepage": "https://github.com/NoMercyLabs/atlas",
       "repository": "https://github.com/NoMercyLabs/atlas",

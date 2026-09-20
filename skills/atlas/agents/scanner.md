@@ -9,7 +9,7 @@ under the marker.
 ---
 
 Read every non-test source file under `<slice directories>`. Enumerate them
-yourself with a directory walk — you have not been given a file list, and there
+yourself with a directory walk, you have not been given a file list, and there
 is no list to ask for. Do not sample. Do not decide a file is uninteresting.
 
 `<paste docs-work/toolchain.md here>`

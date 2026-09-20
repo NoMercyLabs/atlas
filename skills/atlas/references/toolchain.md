@@ -11,8 +11,8 @@ config key, or a command that exists here.
 
 ## The questions
 
-1. **What makes a declaration reachable by a consumer?** Find the mechanism — an
-   exports map, a visibility keyword, a module manifest, a route table — and name
+1. **What makes a declaration reachable by a consumer?** Find the mechanism, an
+   exports map, a visibility keyword, a module manifest, a route table, and name
    the file that holds it. A symbol reachable in the source and not through that
    mechanism is unreachable, which is a finding rather than an entry.
 2. **Everywhere a value can be defaulted, in the order they override each other.**
