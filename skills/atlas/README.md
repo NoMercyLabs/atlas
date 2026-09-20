@@ -93,7 +93,7 @@ atlas/
 npx skills add NoMercyLabs/atlas
 ```
 
-Or copy `skills/atlas/` into `~/.claude/skills/` or your project's `.claude/skills/`.
+Or install it as a Claude Code plugin: `/plugin marketplace add NoMercyLabs/atlas` then `/plugin install atlas@nomercylabs`.
 
 To make ending early impossible rather than discouraged, wire `check_docs.py status` into your harness's stop condition. In Claude Code that is a `Stop` hook that runs it and exits non-zero while it fails.
 

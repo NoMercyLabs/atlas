@@ -1,0 +1,20 @@
+{
+  "name": "nomercylabs",
+  "owner": { "name": "NoMercy Labs", "url": "https://github.com/NoMercyLabs" },
+  "metadata": { "description": "Skills and plugins published by NoMercy Labs." },
+  "plugins": [
+    {
+      "name": "atlas",
+      "displayName": "Atlas",
+      "source": { "source": "github", "repo": "NoMercyLabs/atlas" },
+      "description": "Maps a whole project and documents it as one system, in one voice, every claim grounded in the code and every page gated by two reviews.",
+      "version": "1.0.0",
+      "author": { "name": "NoMercy Labs", "url": "https://github.com/NoMercyLabs" },
+      "homepage": "https://github.com/NoMercyLabs/atlas",
+      "repository": "https://github.com/NoMercyLabs/atlas",
+      "license": "MIT",
+      "keywords": ["documentation", "docs-as-code", "technical-writing", "readme"],
+      "category": "documentation"
+    }
+  ]
+}
