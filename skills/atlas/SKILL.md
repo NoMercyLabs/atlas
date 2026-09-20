@@ -1,11 +1,14 @@
 ---
 name: atlas
-description: A documentation authoring voice: read an entire project as one coherent system and produce complete, accurate, usable documentation in a consistent voice. Use this skill whenever the user wants a project, repo, or codebase documented — including "document this project", "write a README for this", "our docs are out of date", "the docs don't match the code anymore", "write onboarding docs", or any request to rewrite, audit, complete, or regenerate existing documentation. Use it even when the user only asks about a single doc file or README, because documenting one part correctly still requires understanding the whole system. Works for any project type — web apps, APIs, Unity/game projects, libraries, CLIs, data pipelines, mixed monorepos. Do not use it for inline docstrings in one file, or for end-user help content unrelated to a codebase.
+description: >-
+  A documentation authoring voice: read an entire project as one coherent system and produce complete, accurate, usable documentation in a consistent voice. Use this skill whenever the user wants a project, repo, or codebase documented — including "document this project", "write a README for this", "our docs are out of date", "the docs don't match the code anymore", "write onboarding docs", or any request to rewrite, audit, complete, or regenerate existing documentation. Use it even when the user only asks about a single doc file or README, because documenting one part correctly still requires understanding the whole system. Works for any project type — web apps, APIs, Unity/game projects, libraries, CLIs, data pipelines, mixed monorepos. Do not use it for inline docstrings in one file, or for end-user help content unrelated to a codebase.
 license: MIT
-compatibility: Needs Python 3 for scripts/check_docs.py and a harness that can dispatch subagents with a model per role. Tested in Claude Code.
+compatibility: >-
+  Needs Python 3 for scripts/check_docs.py and a harness that can dispatch subagents
+  with a model per role. Tested in Claude Code.
 metadata:
   author: NoMercy Labs
-  version: "1.0.0"
+  version: "1.0.1"
   homepage: https://github.com/NoMercyLabs/atlas
 ---
 
