@@ -1,6 +1,6 @@
-# project-documentation-creator
+# Atlas
 
-An [Agent Skill](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) that
+Atlas is an [Agent Skill](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) that
 documents a whole project as one system, in one voice, with every claim grounded in the code.
 
 Point an agent at a repository and say *"document this project"* or *"the docs don't match the
@@ -9,14 +9,14 @@ writes the pages in parallel, and puts every page through two independent review
 counts as done.
 
 ```bash
-npx skills add NoMercyLabs/project-documentation-creator
+npx skills add NoMercyLabs/atlas
 ```
 
 Or clone it straight into your skills directory:
 
 ```bash
-git clone https://github.com/NoMercyLabs/project-documentation-creator /tmp/pdc \
-  && cp -r /tmp/pdc/skills/project-documentation-creator ~/.claude/skills/
+git clone https://github.com/NoMercyLabs/atlas /tmp/atlas \
+  && cp -r /tmp/atlas/skills/atlas ~/.claude/skills/
 ```
 
 ## What makes it different
@@ -58,10 +58,10 @@ Four roles, dispatched as subagents with a model per role:
 
 ## Documentation
 
-- [Skill documentation](skills/project-documentation-creator/README.md)
-- [SKILL.md](skills/project-documentation-creator/SKILL.md), the workflow the agent follows
-- [The voice](skills/project-documentation-creator/references/voice.md)
-- [The checker](skills/project-documentation-creator/scripts/check_docs.py)
+- [Skill documentation](skills/atlas/README.md)
+- [SKILL.md](skills/atlas/SKILL.md), the workflow the agent follows
+- [The voice](skills/atlas/references/voice.md)
+- [The checker](skills/atlas/scripts/check_docs.py)
 
 ## License
 

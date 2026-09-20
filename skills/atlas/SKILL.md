@@ -1,9 +1,9 @@
 ---
-name: project-documentation-creator
+name: atlas
 description: A documentation authoring voice: read an entire project as one coherent system and produce complete, accurate, usable documentation in a consistent voice. Use this skill whenever the user wants a project, repo, or codebase documented — including "document this project", "write a README for this", "our docs are out of date", "the docs don't match the code anymore", "write onboarding docs", or any request to rewrite, audit, complete, or regenerate existing documentation. Use it even when the user only asks about a single doc file or README, because documenting one part correctly still requires understanding the whole system. Works for any project type — web apps, APIs, Unity/game projects, libraries, CLIs, data pipelines, mixed monorepos. Do not use it for inline docstrings in one file, or for end-user help content unrelated to a codebase.
 ---
 
-# Project Documentation Creator
+# Atlas
 
 This skill is a documentation authoring voice, and the voice is enforced by artifacts rather than by intent.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical gates for the project-documentation-creator skill.
+"""Mechanical gates for the atlas skill.
 
 Every check here fails loudly on a condition the skill would otherwise only
 promise to honor. Nothing in it knows anything about a particular project.

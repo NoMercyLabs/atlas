@@ -1,4 +1,4 @@
-# project-documentation-creator
+# Atlas
 
 The skill an agent loads when asked to document a project, repo, or codebase.
 
@@ -72,7 +72,7 @@ Dispatch templates under `agents/`, not registered agents, so nothing needs inst
 ## Skill layout
 
 ```
-project-documentation-creator/
+atlas/
 ├── SKILL.md                     the workflow, gates and operating boundary
 ├── agents/                      the four dispatch roles
 ├── assets/map-template.md       the map in the shape the checker parses
@@ -90,10 +90,10 @@ project-documentation-creator/
 ## Installing
 
 ```bash
-npx skills add NoMercyLabs/project-documentation-creator
+npx skills add NoMercyLabs/atlas
 ```
 
-Or copy `skills/project-documentation-creator/` into `~/.claude/skills/` or your project's `.claude/skills/`.
+Or copy `skills/atlas/` into `~/.claude/skills/` or your project's `.claude/skills/`.
 
 To make ending early impossible rather than discouraged, wire `check_docs.py status` into your harness's stop condition. In Claude Code that is a `Stop` hook that runs it and exits non-zero while it fails.
 
